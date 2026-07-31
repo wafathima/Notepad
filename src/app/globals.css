@@ -31,14 +31,27 @@
 }
 
 body {
-  background: var(--paper);
-  color: var(--ink);
+  background-image: url('/images/project.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  background-image:
-    linear-gradient(var(--paper-line) 1px, transparent 1px);
-  background-size: 100% 2.15rem;
-  background-position: 0 6.5rem;
+
 }
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(51, 51, 51, 0.3); 
+  pointer-events: none;
+  z-index: 0;
+}
+
 
 .font-display {
   font-family: var(--font-source-serif), Georgia, serif;

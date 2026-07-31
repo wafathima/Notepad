@@ -24,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
   title: {
-    default: "Mini Notepad — Your notes, organized",
+    default: "Notepad — Your notes, organized",
     template: "%s · Mini Notepad",
   },
   description:
