@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  /* Stationery palette */
+  --paper: #FBFAF6;
+  --paper-line: #E4DFD3;
+  --ink: #16213E;
+  --ink-soft: #4B5566;
+  --pencil: #7A8194;
+  --highlight: #F2B441;
+  --highlight-soft: #FCE7C0;
+  --accent-teal: #2F6E64;
+  --danger: #B3462C;
+  --card: #FFFFFF;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-line: var(--paper-line);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-pencil: var(--pencil);
+  --color-highlight: var(--highlight);
+  --color-highlight-soft: var(--highlight-soft);
+  --color-accent-teal: var(--accent-teal);
+  --color-danger: var(--danger);
+  --color-card: var(--card);
+  --font-display: var(--font-source-serif);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  background-image:
+    linear-gradient(var(--paper-line) 1px, transparent 1px);
+  background-size: 100% 2.15rem;
+  background-position: 0 6.5rem;
+}
+
+.font-display {
+  font-family: var(--font-source-serif), Georgia, serif;
+}
+
+.font-mono-ui {
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+/* Torn / dog-ear card corner used as the signature motif on note cards */
+.dogear {
+  position: relative;
+}
+.dogear::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 18px 18px 0;
+  border-color: transparent var(--paper) transparent transparent;
+  filter: drop-shadow(-1px 1px 1px rgba(22, 33, 62, 0.15));
+  transition: border-width 0.15s ease;
+}
+.dogear:hover::after {
+  border-width: 0 24px 24px 0;
+}
+
+.input {
+  width: 100%;
+  border-radius: 0.6rem;
+  border: 1px solid var(--paper-line);
+  background: var(--card);
+  padding: 0.65rem 0.9rem;
+  font-size: 0.95rem;
+  color: var(--ink);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.input::placeholder {
+  color: var(--pencil);
+}
+.input:focus-visible {
+  outline: none;
+  border-color: var(--accent-teal);
+  box-shadow: 0 0 0 3px rgba(47, 110, 100, 0.15);
+}
+textarea.input {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+::selection {
+  background: var(--highlight-soft);
+  color: var(--ink);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
