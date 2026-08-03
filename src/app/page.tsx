@@ -15,7 +15,6 @@ export default function HomePage() {
 
   return (
     <div>
-      {/* SVG Turbulence Filter Definition */}
       <svg className="absolute h-0 w-0" aria-hidden="true">
         <defs>
           <filter id="torn-paper-edge" x="-10%" y="-10%" width="120%" height="120%">
